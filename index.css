@@ -1,0 +1,719 @@
+@font-face {
+	font-family:'Myriad Set Pro';
+	font-style:normal;
+	font-weight:100;
+	src:local('Myriad Set Pro'), 
+	url("./font/myriad-set-pro_thin.woff") 
+	format("woff");
+	/* Copyright (c) 1992 Adobe Systems Incorporated. All Rights Reserved. 
+	Myriad is a trademark of Adobe Systems Incorporated. */
+}
+article, aside, footer, header, nav, main, section, summary, 
+details, hgroup, figure, figcaption{
+	display: block;
+}
+body{
+	font-family: "Myriad Set Pro","微软雅黑";
+}
+body,ul,li,h1,h2,h3,h4,h5,h6,p{
+	margin: 0;
+	padding:0;
+	font-weight: normal;
+	list-style: none;
+}
+a{
+	color:black;
+	text-decoration: none;
+}
+nav{
+	background:rgba(0,0,0,0.8); 
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	z-index: 999;
+}
+nav a{
+	color:white;
+}
+nav li{
+	display: inline-block;
+}
+#bigul{
+	text-align: justify;
+	max-width: 61.5em;
+	padding: 0 20px;
+	margin: 0 auto;
+	height: 44px;
+	line-height: 44px;
+}
+#smalul{
+    height: 48px;
+    display: none;
+    position: relative;
+}
+#smalul li{
+    width: 48px;
+    height:48px;
+}
+
+#xiala{
+    width: 100%;
+    z-index: 10;
+    margin: 0;
+    padding: 0 48px;
+    height: auto;
+    box-sizing: border-box;
+    position: absolute;
+    left:0;
+    top:48px;
+    visibility: hidden;
+    transition:visibility 0s linear;
+}
+#xiala li{
+    width: 100%;
+    line-height: 2.35em;
+    font-weight: 300;
+    height: 47px;
+    color:#fff;
+    border-bottom: 1px solid #333;
+}
+#aa:checked~ nav #xiala li{
+    animation-name:opacit;
+    animation-duration:3s;
+    animation-fill-mode:both;
+}
+#aa:checked~ nav #xiala .last{
+    animation-name:opacit;
+    animation-duration:1s;
+    animation-fill-mode:both;
+}
+#xiala>li>a{
+    font-size: 20px;
+    background: no-repeat left center;
+}
+/*----小屏幕下拉菜单延时--------*/
+#xiala .mac1 {animation-delay:200ms;}
+#xiala .ipad1 {animation-delay:300ms}
+#xiala .iphone1 {animation-delay:400ms;}
+#xiala .watch1 {animation-delay:500ms;}
+#xiala .tv1 {animation-delay:600ms;}
+#xiala .music1 {animation-delay:700ms;}
+#xiala .support1 {animation-delay:800ms;}
+#xiala .last{ 
+    animation-delay:1s;
+}
+
+#xiala .mac1 a{background-image: url(./image/d4.svg)}
+#xiala .ipad1 a{background-image: url(./image/d6.svg)}
+#xiala .iphone1 a{background-image: url(./image/d1.svg)}
+#xiala .watch1 a{background-image: url(./image/d3.svg)}
+#xiala .tv1 a{background-image: url(./image/d5.svg)}
+#xiala .music1 a{background-image: url(./image/d7.svg)}
+#xiala .support1 a{background-image: url(./image/d8.svg)}
+.last{
+    width: 100%;
+    line-height: 47px;
+    font-weight: 300;
+    height: 47px;
+    color:#fff;
+    border-bottom: 1px solid #fff;
+}
+.last a{
+    display: block;
+    padding-left: 20px;
+    width: 100%;
+    height: 47px;
+    font-size: 20px;
+    background: url(./image/image_large.svg) no-repeat left center;
+}
+
+.onebox,.twobox{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 5;
+    transition: transform 0.25s;
+}
+.one{
+    top:22px;
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 16px;
+    transform: translateY(-3px);
+    transition: transform 0.25s 0.2s;
+}
+.two{
+    top:23px;
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 16px;
+    transform: translateY(3px);
+    transition: transform 0.25s 0.2s;
+}
+#aa{
+    display: none;
+}
+#aa:checked ~ nav{
+    transition:all .35s .3s ease;
+    height:100%;
+    background:black;
+}
+#aa:checked ~ nav #xiala{
+    visibility: visible;
+}
+@keyframes opacit{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#aa:checked ~ nav .shop{
+    transform:translateX(100px);
+}
+#aa:checked ~ nav .onebox .one{
+    transition: transform 0.2s;
+    transform:translateY(0px) rotateZ(90deg);
+}
+#aa:checked ~ nav .twobox .two{
+    transition: transform 0.2s;
+    transform:translateY(0px) rotateZ(90deg);
+}
+#aa:checked ~ nav .onebox{
+    transition: transform 0.25s 0.2s;
+    transform:rotateZ(45deg);
+}
+#aa:checked ~ nav .twobox{
+    transition: transform 0.25s 0.2s;
+    transform:rotateZ(-45deg);
+}
+
+#smalul .list{
+    position: absolute;
+    left:0;
+    top:0;
+}
+#smalul .logo{
+    position: absolute;
+    left:50%;
+    top:0;
+    margin-left: -24px;
+    background:url(./image/x7.svg) center no-repeat;
+}
+#smalul .shop{
+    position: absolute;
+    top:0;
+    right:0;
+    background:url(./image/x8.svg) center no-repeat;
+}
+@media(max-width:750px){
+   #bigul{
+    display: none;
+   }
+   #smalul{
+    display: block;
+   }
+   nav{
+    height:48px;
+    overflow: hidden;
+    transition:height 0.35s .15s,background-color .35s;
+   }
+}
+@media(min-width:750px){
+    #aa:checked ~ nav #xiala{
+        display: none;
+    }
+}
+nav ul:after{
+	content:"";
+	display: inline-block;
+	width: 100%;
+	height: 0;
+	font-size:0;
+	line-height: 0;
+}
+nav li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: no-repeat center;
+	position: relative;
+}
+nav li a:hover{
+	opacity: 0.6;
+}
+nav span{
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	left:0;
+	top:0;
+}
+nav .logo{width:2.5em;height:2.75em;}
+nav .mac{width:2.9375em;height:2.75em;}
+nav .ipad{width:2.916em;height:2.75em;}
+nav .iphone{width:3.916em;height:2.75em;}
+nav .watch{width:3.69375em;height:2.75em;}
+nav .tv{width:2.36em;height:2.75em;}
+nav .music{width:3.47em;height:2.75em;}
+nav .support{width:4.416em;height:2.75em;}
+nav .search{width:2.5em;height:2.75em;}
+nav .shop{width:2.375em;height:2.75em;transition:all .25s .55s ease-out;}
+
+nav .logo a{background-image: url(./image/d9.svg);}
+nav .mac a{background-image: url(./image/d4.svg)}
+nav .ipad a{background-image: url(./image/d6.svg)}
+nav .iphone a{background-image: url(./image/d1.svg)}
+nav .watch a{background-image: url(./image/d3.svg)}
+nav .tv a{background-image: url(./image/d5.svg)}
+nav .music a{background-image: url(./image/d7.svg)}
+nav .support a{background-image: url(./image/d8.svg)}
+nav .search a{background-image: url(./image/image_large.svg)}
+nav .shop a{background-image: url(./image/d2.svg)}
+
+.test{
+	margin-top:50px;
+	width: 6em;
+	height:70px;
+	border:1px solid black;
+	font-size: 3.125em;
+}
+
+.hero-slides{
+	position: relative;
+    border-bottom: 2px solid #fff;
+    width: auto;
+    height: 100%;
+    margin-top: -46px;
+    min-height: 650px;
+    overflow: hidden;
+}
+ .gallery-content{
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    transition:transform 1s ease;
+}
+.hero-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.backing-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background:url(./image/home_hero_ssn_large.png) no-repeat center center;
+}
+.backing-link1{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background:url(./image/home_hero_evergreen_ipad_medium.jpg)  no-repeat center center;
+}
+.backing-link2{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background:url(./image/home_hero_apple_tv_evergreen_medium.jpg)  no-repeat center center;
+}
+.backing-link img{
+    width: 100%;
+    height:100%;
+}
+.copy{
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.copy1{
+    width: 100%;
+    position: absolute;
+    left:auto;
+    bottom:20%;
+    margin: 0 auto;
+}
+.copy-inner{
+	padding-top: 104px;
+	text-align: center;
+}
+.copy-inner h1{
+	font-size: 64px;
+    line-height: 1.0625em;
+    font-weight: 200;
+    margin-bottom:10px;
+}
+.copy-inner h2{
+	font-size: 24px;
+    line-height: 1.3542em;
+    font-weight: 200;
+    margin-bottom: 0.25em;
+}
+.copy-inner .links{
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 200;
+}
+.dotnav{
+	position: absolute;
+    left: 0;
+    bottom: -3px;
+    right: 0;
+    height: 40px;
+    z-index: 5;
+}
+.dotnav ul{
+	display: inline-block;
+	margin-left: 50%;
+}
+.dotnav li{
+    margin: 0 10px;
+    width: 8px;
+    height: 8px;
+    float: left;
+    background:#ccc;
+    border-radius: 50%;
+    position: relative;
+}
+.dotnav li a{
+	top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    outline: none;
+    position: absolute;
+    border-radius: 50%;
+}
+.promos ul{
+    max-width:2566px; 
+    overflow: hidden;
+    margin:0 auto;
+}
+.promos li{
+	width: 25%;
+	height: 200px;
+	float: left;
+	padding: 0;
+    border-bottom: 2px solid #fff;
+}
+.promos li a{
+	display: block;
+    font-size:0;
+    list-style: none;
+    min-height: 200px;
+    font: 0/0 a;
+    height: 100%;
+    background-size: 640px 200px;
+    border-right:1px solid white;
+}
+
+@media (max-width: 1068px){
+     .promos li{
+        width:50%; 
+     }
+}
+@media (max-width: 736px){
+    .promos li{
+        width:100%; 
+     }
+     .hero-slides{
+        min-height: 391px;
+     }
+     .backing-link{
+        background:url(./image/home_hero_ssn_small.png) no-repeat center;
+     }
+     .backing-link1{
+        background:url(./image/home_hero_evergreen_ipad_small.jpg) no-repeat center;
+     }
+     .backing-link2{
+        background:url(./image/home_hero_apple_tv_landscape_small.jpg) no-repeat center;
+     }
+}
+.promo-tile-1 a{
+	background: url(./image/promo_holiday_watch_large.jpg) center;
+}
+.promo-tile-2 a{
+	background: url(./image/promo_startsomethingnew_iphone6s_small.jpg) center;
+}
+.promo-tile-3 a{
+	background: url(./image/promo_ios93preview_large.jpg) center;
+}
+.promo-tile-4 a{
+	background: url(./image/promo_macbook_small.jpg) center;
+}
+
+/*footer*/
+
+.ac-globalfooter{
+    font-size: 12px;
+    line-height: 1.66667em;
+    font-weight: 400;
+    background-color: #f2f2f2;
+    color: #666;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.ac-gf-content{
+	margin: 0 auto;
+    padding: 0 22px;
+    max-width: 980px;
+}
+.ac-gf-label{
+	position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+.ac-gf-directory{
+	max-width:980px;
+	height: 240px;
+	font-size: 12px;
+    line-height: 1.66667em;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+}
+.ac-gf-directory-column{
+	width: 20%;
+	position: relative;
+    z-index: 1;
+    min-height: 2px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.ac-gf-directory-column-section{
+	width: 100%;
+    position: relative;
+    z-index: 1;
+    min-height: 2px;
+    margin-bottom:10px;
+    padding: 0;
+    float: left;
+}
+@media(max-width: 768px){
+    .ac-gf-content{
+        width: auto;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+    .ac-gf-directory-column-section-title{
+        font-size: 14px;
+    }
+    .ac-gf-content h3:after{
+        content:"+";
+        float: right;
+        transition:transform 0.3s ease;
+    }
+    .ac-gf-directory-column{
+        width: 100%;
+    }
+    .ac-gf-footer .ac-gf-footer-locale{
+        width: 100%;
+        float: left;
+    }
+    .ac-gf-directory-column-section{
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .ac-gf-directory-column-section-list{
+        overflow: hidden;
+        padding-bottom: 16px;
+        position: absolute;
+        width: 100%;
+        visibility: hidden;
+    }
+    .ac-gf-footer-shop{
+        width: 100%;
+    }
+    .ac-gf-footer-legal-links{
+        width: 100%;
+    }
+}
+
+
+input{
+    display: none;
+}
+#one:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+#two:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+#three:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+#four:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+#five:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+#six:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+#seven:checked ~.ac-gf-directory-column-section-list{
+    position: relative;
+    visibility: visible;
+}
+
+
+#one:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+#two:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+#three:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+#four:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+#five:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+#six:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+#seven:checked ~.ac-gf-directory-column-section-label h3:after{
+    transform:rotateZ(45deg);
+}
+
+
+#one:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+#two:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+#three:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+#four:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+#five:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+#six:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+#seven:checked ~.ac-gf-directory-column-section-label .ac-gf-directory-column-section-title{
+   font-size: 16px;
+}
+
+.ac-gf-directory-column-section-label{
+	font-size: 1em;
+}
+.ac-gf-directory-column-section-title{
+	font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.ac-gf-directory-column-section-list{
+	margin-right: 20px;
+}
+.ac-gf-directory-column-section-item>a{
+	color:#333;
+}
+
+
+
+.ac-gf-footer{
+	height: 52px;
+	color: #999;
+    padding: 20px 0 24px;
+}
+.ac-gf-footer-shop{
+	max-height: 9999px;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.ac-gf-footer-shop>a{
+	color:#08c;
+}
+.nowrap{
+	color: #08c;
+}
+.ac-gf-footer-locale{
+	float: right;
+}
+.ac-gf-footer-locale-link{
+	display: inline;
+}
+.ac-gf-footer-locale-flag{
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(./image/16.png);
+    cursor: pointer;
+    float: left;
+    margin-top: 1px;
+    padding-right: 5px;
+}
+.ac-gf-footer-legal-copyright{
+	margin-right: 26px;
+    float: left;
+}
+.ac-gf-footer-legal-links{
+    margin-right: 26px;
+    float: left;
+}
+.ac-gf-footer-legal-link{
+	border-right: 1px solid #d6d6d6;
+    margin-right: 10px;
+    padding-right: 12px;
+    white-space: nowrap;
+}
+
+.dotnav .current{
+    background:#333;
+}
+
+
+
+
+
+
+
+
+
